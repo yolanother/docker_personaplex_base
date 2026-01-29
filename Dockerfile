@@ -22,5 +22,8 @@ EXPOSE 8998
 # HF_TOKEN should be passed as environment variable at runtime
 ENV HF_TOKEN=""
 
-# Create SSL directory and start server
-CMD SSL_DIR=$(mktemp -d) && python -m moshi.server --ssl "$SSL_DIR"
+# Copy and set up entrypoint
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
