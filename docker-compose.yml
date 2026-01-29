@@ -1,0 +1,15 @@
+services:
+  personaplex:
+    build: .
+    ports:
+      - "8998:8998"
+    environment:
+      - HF_TOKEN=${HF_TOKEN}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
