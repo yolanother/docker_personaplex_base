@@ -25,9 +25,9 @@ docker run --gpus all -p 8998:8998 -e HF_TOKEN=your_token yolan/personaplex:late
    ```
 
 3. Run with Docker Compose:
-   ```bash
-   docker compose up
-   ```
+    ```bash
+    docker compose up
+    ```
 
 ### Building Locally
 
